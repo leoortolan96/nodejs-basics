@@ -1,0 +1,16 @@
+doctype html
+html
+  head
+    title= title
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+    ul
+      li My Text
+    input(type= 'text').class-name#anyId
+    - var condition2 = false
+    if condition && condition2
+      p Condition is true!
+    - var anyArray = [1,2,3]
+    each value in anyArray 
+      p= value
+    block content

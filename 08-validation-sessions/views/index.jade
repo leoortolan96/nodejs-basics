@@ -1,0 +1,26 @@
+extends layout
+
+block content
+  h1= title
+  if success
+    section(class="success")
+      h2 Validação bem-sucedida
+  else 
+    if errors 
+      section(class="errors")
+        ul 
+          each error in errors
+            li= error.msg
+  form(method="POST", action="/submit")
+    div(class="input")
+      label(for="email") E-mail 
+      input(type="text", name="email", id="email")
+    div(class="input")
+      label(for="password") Password
+      input(type="password", name="password", id="password")
+    div(class="input")
+      label(for="confirmPassword") Confirm password
+      input(type="password", name="confirmPassword", id="confirmPassword")
+  
+    button(type="submit") Sign up
+
